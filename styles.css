@@ -234,7 +234,7 @@ body {
 .stats {
   background: var(--primary);
   color: white;
-  padding: 32px 0;
+  padding: 52px 0;
 }
 .stats-inner {
   display: flex;
@@ -250,11 +250,11 @@ body {
   flex: 1;
 }
 .stat-num {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 800;
 }
 .stat-label {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.9;
 }
 

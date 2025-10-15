@@ -53,18 +53,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Counters
   const counters = document.querySelectorAll(".stat-num");
-  counters.forEach((c) => {
-    const target = +c.getAttribute("data-target");
-    let count = 0;
-    const step = Math.ceil(target / 60);
-    const interval = setInterval(() => {
-      count += step;
-      if (count >= target) {
-        c.textContent = target;
-        clearInterval(interval);
-      } else c.textContent = count;
-    }, 20);
-  });
+  let started = false; // supaya hanya jalan sekali
+
+  const startCounting = () => {
+    counters.forEach((c) => {
+      const target = +c.getAttribute("data-target");
+      let count = 0;
+      const step = Math.ceil(target / 60);
+      const interval = setInterval(() => {
+        count += step;
+        if (count >= target) {
+          c.textContent = target;
+          clearInterval(interval);
+        } else {
+          c.textContent = count;
+        }
+      }, 20);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          startCounting();
+        }
+      });
+    },
+    {
+      threshold: 0.4, // mulai kalau 40% section kelihatan
+    },
+  );
+
+  const statsSection = document.querySelector(".stats");
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
 
   // Testimonial slider
   let current = 0;
