@@ -1,4 +1,4 @@
-/* Simple one-page CSS for Birutama Envitech example */
+/* Simple one-page CSS for Birutama Envitech */
 :root {
   --primary: #006d77;
   --accent: #ffb703;
@@ -235,6 +235,7 @@ body {
     transform: translateX(-50%);
   }
 }
+
 /* About */
 .about {
   padding: 48px 0;
