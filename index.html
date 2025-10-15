@@ -288,19 +288,80 @@
     </section>
 
     <section id="contact" class="contact container">
-      <h3 class="section-title">Lets Find Us !</h3>
+      <div class="section-subtitle">
+        <span class="text">LETS FIND US</span>
+        <span class="line"></span>
+      </div>
+      <h3 class="section-title">Contact Us</h3>
       <div class="contact-grid">
-        <div class="contact-map">
-          <!-- static placeholder map -->
-          <img src="assets/map.svg" alt="map" />
-        </div>
+        <!-- LEFT SIDE: Info -->
         <div class="contact-info">
-          <h4>Contact</h4>
-          <p>Manager Marketing: Aji Nugroho</p>
-          <p>Phone: 085292963333</p>
-          <p>Email: info@birutamaenvitech.com</p>
-          <p>Address: Jl Kebagusan Raya No. 50 B,Jakarta</p>
+          <h4><i class="fa-solid fa-handshake"></i> Get in Touch</h4>
+          <p>
+            <i class="fa-solid fa-user"></i> Manager Marketing:
+            <b>Aji Nugroho</b>
+          </p>
+          <p><i class="fa-solid fa-phone"></i> 0852-9296-3333</p>
+
+          <div class="divider"></div>
+
+          <h4><i class="fa-solid fa-building"></i> Office</h4>
+          <p><i class="fa-solid fa-phone"></i> 021 - 7817355</p>
+          <p><i class="fa-solid fa-envelope"></i> info@birutamaenvitech.com</p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> Jl. Kebagusan Raya No. 50
+            B, Kebagusan, Pasar Minggu, Jakarta Selatan
+          </p>
+
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
         </div>
+
+        <!-- RIGHT SIDE: Form -->
+        <form class="contact-form" id="contactForm">
+          <label>Nama</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Masukkan nama Anda"
+            required
+          />
+
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Masukkan email Anda"
+            required
+          />
+
+          <label>Subject</label>
+          <select id="subject">
+            <option value="Konsultasi Lingkungan">Konsultasi Lingkungan</option>
+            <option value="Kerjasama Proyek">Kerjasama Proyek</option>
+            <option value="Pertanyaan Umum">Pertanyaan Umum</option>
+          </select>
+
+          <label>Pesan</label>
+          <textarea
+            id="message"
+            placeholder="Tulis pesan Anda..."
+            rows="4"
+            required
+          ></textarea>
+
+          <div class="form-actions">
+            <button type="button" id="sendEmail">
+              <i class="fa-solid fa-envelope"></i> Kirim via Email
+            </button>
+            <button type="button" id="sendWA">
+              <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
+            </button>
+          </div>
+        </form>
       </div>
     </section>
 

@@ -272,4 +272,31 @@ document.addEventListener("DOMContentLoaded", function () {
   heroDots.forEach((dot, i) => {
     dot.addEventListener("click", () => showHeroSlide(i));
   });
+
+  // Contact form submission
+  document.getElementById("sendEmail").addEventListener("click", () => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const mailtoLink = `mailto:info@birutamaenvitech.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(
+      `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
+    )}`;
+    window.location.href = mailtoLink;
+  });
+
+  document.getElementById("sendWA").addEventListener("click", () => {
+    const name = document.getElementById("name").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+    const waNumber = "6285292963333"; // gunakan format internasional tanpa +
+
+    const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(
+      `Halo, saya ${name}.\n\nSaya ingin menanyakan mengenai: ${subject}\n\n${message}`,
+    )}`;
+    window.open(waLink, "_blank");
+  });
 });
