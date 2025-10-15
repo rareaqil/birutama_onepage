@@ -162,6 +162,68 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(statsSection);
   }
 
+  // Modal Portofolio
+  const portfolioModal = document.getElementById("portfolioModal");
+  const portfolioContent = document.getElementById("portfolioContent");
+  const closePortfolio = document.getElementById("portfolioClose");
+
+  // Data project
+  const portfolioDetails = {
+    1: {
+      title: "Dokumen AMDAL",
+      image: "assets/portfolio1.svg",
+      desc: "Penyusunan dokumen AMDAL lengkap untuk proyek industri dan infrastruktur, sesuai regulasi terbaru.",
+    },
+    2: {
+      title: "Pengelolaan Limbah",
+      image: "assets/portfolio2.svg",
+      desc: "Desain sistem pengelolaan limbah cair dan padat, untuk efisiensi serta kepatuhan lingkungan.",
+    },
+    3: {
+      title: "Pelaporan Digital",
+      image: "assets/portfolio3.svg",
+      desc: "Platform otomatisasi pelaporan PROPER dan RKL-RPL dengan integrasi sistem internal.",
+    },
+    4: {
+      title: "Pemantauan Air",
+      image: "assets/portfolio4.svg",
+      desc: "Proyek IoT pemantauan kualitas air dengan sensor dan dashboard visualisasi.",
+    },
+    5: {
+      title: "Audit Lingkungan",
+      image: "assets/portfolio5.svg",
+      desc: "Pelaksanaan audit kepatuhan dan sertifikasi ISO 14001 bagi sektor energi.",
+    },
+    6: {
+      title: "Konsultasi ESG",
+      image: "assets/portfolio6.svg",
+      desc: "Pendampingan implementasi ESG dan penyusunan laporan keberlanjutan (sustainability report).",
+    },
+  };
+
+  // Event untuk tiap tile
+  document.querySelectorAll(".tile").forEach((tile) => {
+    tile.addEventListener("click", () => {
+      const id = tile.getAttribute("data-portfolio");
+      const item = portfolioDetails[id];
+      portfolioContent.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <h4>${item.title}</h4>
+      <p>${item.desc}</p>
+    `;
+      portfolioModal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  // Close modal
+  closePortfolio.addEventListener("click", () =>
+    portfolioModal.setAttribute("aria-hidden", "true"),
+  );
+  portfolioModal.addEventListener("click", (e) => {
+    if (e.target === portfolioModal)
+      portfolioModal.setAttribute("aria-hidden", "true");
+  });
+
   // Testimonial slider
   let current = 0;
   const slides = document.querySelectorAll(".slide");

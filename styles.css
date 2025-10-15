@@ -405,18 +405,120 @@ body {
 
 /* Portfolio */
 .portfolio {
-  padding: 48px 0;
+  padding: 64px 0;
 }
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+.tile {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 .tile img {
   width: 100%;
-  height: 170px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: inherit;
+  transition: transform 0.4s ease;
+}
+.tile:hover img {
+  transform: scale(1.1);
+}
+
+/* Hover overlay */
+.tile .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.tile:hover .overlay {
+  opacity: 1;
+}
+.tile .overlay h4 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Modal */
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 20, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+.portfolio-modal[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+.portfolio-dialog {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 720px;
+  width: 90%;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadePop 0.4s ease forwards;
+}
+@keyframes fadePop {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.portfolio-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: #003049;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.portfolio-close:hover {
+  transform: rotate(90deg);
+  color: var(--primary);
+}
+.portfolio-content {
+  margin-top: 1.5rem;
+}
+.portfolio-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.portfolio-content h4 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.portfolio-content p {
+  line-height: 1.6;
+  font-size: 14px;
 }
 
 /* Testimonials */

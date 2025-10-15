@@ -174,8 +174,8 @@
     <section id="services" class="services container">
       <div class="services-header">
         <div class="section-subtitle">
+          <span class="text">SERVICES</span>
           <span class="line"></span>
-          <span class="text">WHAT WE DO</span>
         </div>
         <h3 class="section-title">Check Our Services</h3>
       </div>
@@ -222,29 +222,46 @@
     </div>
 
     <section id="portfolio" class="portfolio container">
+      <div class="section-subtitle">
+        <span class="line"></span>
+        <span class="text">WHAT WE DO</span>
+      </div>
       <h3 class="section-title">Portfolio</h3>
       <div class="portfolio-grid">
-        <!-- 6 placeholder images -->
-        <div class="tile">
-          <img src="assets/portfolio1.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="1">
+          <img src="assets/portfolio1.svg" alt="Project 1" />
+          <div class="overlay"><h4>Dokumen AMDAL</h4></div>
         </div>
-        <div class="tile">
-          <img src="assets/portfolio2.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="2">
+          <img src="assets/portfolio2.svg" alt="Project 2" />
+          <div class="overlay"><h4>Pengelolaan Limbah</h4></div>
         </div>
-        <div class="tile">
-          <img src="assets/portfolio3.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="3">
+          <img src="assets/portfolio3.svg" alt="Project 3" />
+          <div class="overlay"><h4>Pelaporan Digital</h4></div>
         </div>
-        <div class="tile">
-          <img src="assets/portfolio4.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="4">
+          <img src="assets/portfolio4.svg" alt="Project 4" />
+          <div class="overlay"><h4>Pemantauan Air</h4></div>
         </div>
-        <div class="tile">
-          <img src="assets/portfolio5.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="5">
+          <img src="assets/portfolio5.svg" alt="Project 5" />
+          <div class="overlay"><h4>Audit Lingkungan</h4></div>
         </div>
-        <div class="tile">
-          <img src="assets/portfolio6.svg" alt="portfolio" />
+        <div class="tile" data-portfolio="6">
+          <img src="assets/portfolio6.svg" alt="Project 6" />
+          <div class="overlay"><h4>Konsultasi ESG</h4></div>
         </div>
       </div>
     </section>
+
+    <!-- Modal Portofolio -->
+    <div class="portfolio-modal" id="portfolioModal" aria-hidden="true">
+      <div class="portfolio-dialog">
+        <button class="portfolio-close" id="portfolioClose">✕</button>
+        <div class="portfolio-content" id="portfolioContent"></div>
+      </div>
+    </div>
 
     <section class="testimonials container">
       <h3 class="section-title">People are Saying About We</h3>
