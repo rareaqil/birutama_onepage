@@ -6,6 +6,43 @@
   --bg: #f7fbfb;
   --card: #ffffff;
   --container: 1100px;
+  /* --app-height: 100vh; */
+}
+.section-hero,
+.section-about,
+.section-services,
+.section-portfolio {
+  height: 100%;
+  width: 100%;
+  /* padding: 60px 0; */
+  /* scroll-margin-top: 80px; */
+}
+@media (max-width: 1536px) {
+  .section-hero,
+  .section-about,
+  .section-services,
+  .section-portfolio {
+    min-height: 100vh; /* lebih kecil supaya muat layar tablet */
+  }
+}
+
+@media (max-width: 900px) {
+  .section-hero,
+  .section-about,
+  .section-services,
+  .section-portfolio {
+    min-height: none; /* lebih kecil supaya muat layar tablet */
+  }
+}
+
+/* Mobile / small screen */
+@media (max-width: 520px) {
+  .section-hero,
+  .section-about,
+  .section-services,
+  .section-portfolio {
+    min-height: auto; /* biarkan sesuai konten */
+  }
 }
 * {
   box-sizing: border-box;
@@ -158,7 +195,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh; /* membuat 1 layar penuh */
+  /* membuat 1 layar penuh */
   background: #ffffff;
   overflow: hidden;
 }
@@ -217,10 +254,19 @@ body {
   justify-content: center;
 }
 
-.section-title {
+.clients.section-title {
   font-size: 24px;
   margin-bottom: 24px;
-  color: #023040;
+  color: var(--primary);
+  /* text-align: start; */
+}
+
+@media (max-width: 900px) {
+  /* tablet */
+  .section-title {
+    font-size: 20px;
+    text-align: start; /* biasanya untuk slider di tengah */
+  }
 }
 
 .client-slider {
@@ -263,14 +309,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh; /* membuat 1 layar penuh */
+  /* membuat 1 layar penuh */
   background: #ffffff;
   overflow: hidden;
 }
 
 .about {
   padding: 48px 0;
-  margin-top: auto;
+  margin-top: 2%;
 }
 
 .about-grid {
@@ -323,6 +369,7 @@ body {
   background: var(--primary);
   color: white;
   padding: 52px 0;
+  margin-top: 2%;
 }
 .stats-inner {
   display: flex;
@@ -348,7 +395,7 @@ body {
 
 /* Services */
 .section-services {
-  height: 100vh; /* membuat 1 layar penuh */
+  /* membuat 1 layar penuh */
   background: var(--bg);
   overflow: hidden;
 }
@@ -495,13 +542,20 @@ body {
 
 /* Portfolio */
 .section-portfolio {
-  height: 100vh; /* membuat 1 layar penuh */
+  /* membuat 1 layar penuh */
   background: #fff;
   overflow: hidden;
   scroll-margin-top: 80px;
 }
+
 .portfolio {
   padding: 64px 0;
+}
+@media (max-width: 520px) {
+  .portfolio.flip-x {
+    transform: none; /* hapus efek rotasi */
+    transition: none; /* optional: hapus transisi */
+  }
 }
 .portfolio-grid {
   display: grid;
@@ -650,6 +704,16 @@ body {
 .contact {
   scroll-margin-top: 80px;
 }
+.contact.section-title {
+  color: var(--accent);
+}
+
+.contact.section-subtitle .line {
+  background-color: var(--accent);
+}
+.contact.section-subtitle .text {
+  color: var(--accent);
+}
 
 .contact-grid {
   display: flex;
@@ -742,6 +806,7 @@ body {
   font-weight: 600;
   margin-top: 12px;
   display: block;
+  color: black;
 }
 
 .contact-form input,
@@ -795,8 +860,9 @@ body {
 
 /* Footer */
 .site-footer {
-  background: linear-gradient(90deg, #054e54, #0b6b6b);
+  background: linear-gradient(90deg, #054e54, #0b6b6b) !important;
   color: white;
+  padding-top: 20px;
 }
 
 .footer-inner {
@@ -1022,7 +1088,7 @@ body {
 }
 
 .hero-dots .dot.active {
-  background: #ffb703;
+  background: var(--primary);
   width: 10 px;
   height: 10 px;
 }
