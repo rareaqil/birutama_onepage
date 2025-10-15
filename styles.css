@@ -258,8 +258,19 @@ body {
 }
 
 /* About */
+/* section about with 100vh */
+.section-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; /* membuat 1 layar penuh */
+  background: #ffffff;
+  overflow: hidden;
+}
+
 .about {
   padding: 48px 0;
+  margin-top: auto;
 }
 
 .about-grid {
@@ -270,7 +281,7 @@ body {
 }
 
 .about-media img {
-  width: 100%;
+  width: 90%;
   border-radius: 8px;
 }
 
