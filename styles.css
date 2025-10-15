@@ -281,7 +281,7 @@ body {
 }
 
 .about-media img {
-  width: 90%;
+  width: 80%;
   border-radius: 8px;
 }
 
@@ -347,20 +347,22 @@ body {
 }
 
 /* Services */
+.section-services {
+  height: 100vh; /* membuat 1 layar penuh */
+  background: var(--bg);
+  overflow: hidden;
+}
 .services {
-  padding: 48px 0;
+  padding: 100px 0;
+  margin-top: auto;
 }
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  display: flex; /* ubah jadi flex */
+  flex-wrap: wrap; /* biar bisa ke baris baru */
+  justify-content: center; /* center secara horizontal */
+  gap: 20px; /* jarak antar item */
 }
-.service-card {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(2, 48, 64, 0.04);
-}
+
 .service-icon {
   font-size: 28px;
 }
@@ -385,11 +387,11 @@ body {
 
 .service-card {
   background: var(--card);
-  padding: 24px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(2, 48, 64, 0.05);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 340px; /* jangan grow */
 }
 
 .service-card:hover {
