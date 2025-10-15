@@ -1,7 +1,7 @@
 /* Simple one-page CSS for Birutama Envitech */
 :root {
   --primary: #006d77;
-  --accent: #ffb703;
+  --accent: #d1e1e3;
   --muted: #6b7280;
   --bg: #f7fbfb;
   --card: #ffffff;
@@ -216,7 +216,7 @@ body {
 
 .client-logo {
   height: 60px;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   opacity: 0.8;
   transition: all 0.3s ease;
 }
@@ -897,14 +897,14 @@ body {
   color: #fff;
 }
 
-.btn-primary {
+/* .btn-primary {
   background: #ffb703;
   border: none;
   color: #1b1b1b;
-}
+} */
 
 .btn-primary:hover {
-  background: #ffa500;
+  background: var(--primary);
 }
 
 .hero-right {
