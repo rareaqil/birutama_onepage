@@ -31,18 +31,89 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalContent = document.getElementById("modalContent");
   const openBtns = document.querySelectorAll(".open-service");
   const closeBtn = document.getElementById("modalClose");
+
+  // 🧩 Tambahkan konten untuk tiap layanan di sini:
+  const serviceDetails = {
+    1: {
+      title: "Dokumen Lingkungan",
+      content: `
+      <p>
+        Kami menyediakan layanan penyusunan dokumen lingkungan seperti:
+      </p>
+      <ul>
+        <li>AMDAL (Analisis Mengenai Dampak Lingkungan)</li>
+        <li>UKL–UPL (Upaya Pengelolaan & Pemantauan Lingkungan)</li>
+        <li>SPPL (Surat Pernyataan Pengelolaan Lingkungan)</li>
+      </ul>
+      <p>
+        Semua proses dilakukan sesuai regulasi terbaru dari Kementerian
+        Lingkungan Hidup dan Kehutanan (KLHK). Kami memastikan setiap dokumen
+        memenuhi standar teknis dan hukum, serta mendukung keberlanjutan proyek Anda.
+      </p>
+    `,
+    },
+    2: {
+      title: "Pelaporan Pengelolaan",
+      content: `
+      <p>
+        Layanan ini membantu perusahaan Anda dalam menyusun dan mengelola laporan
+        pengelolaan lingkungan seperti:
+      </p>
+      <ul>
+        <li>Laporan RKL-RPL (Rencana Pengelolaan & Pemantauan Lingkungan)</li>
+        <li>Laporan PROPER</li>
+        <li>Laporan triwulan dan tahunan</li>
+      </ul>
+      <p>
+        Sistem kami dapat diintegrasikan dengan platform digital untuk
+        mempercepat proses pelaporan, meningkatkan akurasi data, dan memastikan
+        kepatuhan terhadap regulasi.
+      </p>
+    `,
+    },
+    3: {
+      title: "Tata Lingkungan",
+      content: `
+      <p>
+        Kami menawarkan solusi tata kelola lingkungan yang mencakup:
+      </p>
+      <ul>
+        <li>Audit lingkungan dan evaluasi kepatuhan</li>
+        <li>Perencanaan tata ruang hijau dan konservasi</li>
+        <li>Penerapan sistem manajemen lingkungan (ISO 14001)</li>
+      </ul>
+      <p>
+        Dengan pendekatan berbasis data dan pengalaman praktis, kami membantu
+        perusahaan mengoptimalkan efisiensi lingkungan serta mencapai target ESG.
+      </p>
+    `,
+    },
+  };
+
   openBtns.forEach((b) => {
     b.addEventListener("click", function () {
       const id = this.getAttribute("data-service");
+      const detail = serviceDetails[id];
+
+      // Jika ada datanya, tampilkan konten sesuai
+      if (detail) {
+        modalContent.innerHTML = `
+        <h4>${detail.title}</h4>
+        ${detail.content}
+      `;
+      } else {
+        // fallback kalau belum ada konten
+        modalContent.innerHTML = `
+        <h4>Service ${id}</h4>
+        <p>Detail layanan sedang disiapkan.</p>
+      `;
+      }
+
       modal.setAttribute("aria-hidden", "false");
-      modalContent.innerHTML =
-        "<h4>Service " +
-        id +
-        "</h4><p>Detail dari layanan nomor " +
-        id +
-        " — kami menyediakan solusi lengkap dan konsultasi profesional.</p>";
     });
   });
+
+  // Tutup modal
   closeBtn &&
     closeBtn.addEventListener("click", () =>
       modal.setAttribute("aria-hidden", "true"),
