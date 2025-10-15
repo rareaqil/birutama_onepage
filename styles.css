@@ -154,14 +154,31 @@ body {
 /* Nav Responsive */
 
 /* Hero */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh; /* membuat 1 layar penuh */
+  background: #ffffff;
+  overflow: hidden;
+}
+
 .hero {
-  padding: 48px 0;
+  flex: 2; /* hero ambil 2/3 layar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 48px 0; */
   background: transparent;
 }
 .hero-inner {
   display: flex;
   gap: 20px;
   align-items: center;
+  width: var(--container);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .hero-left {
   flex: 1;
@@ -190,10 +207,14 @@ body {
   box-shadow: 0 12px 30px rgba(2, 48, 64, 0.08);
 }
 .clients {
-  padding: 40px 0;
+  flex: 1; /* ambil 1/3 bagian bawah layar */
+  padding: 20px 0;
   text-align: center;
-  background: #f9fafb;
+  background: #ffffff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-title {
