@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Birutama Envitech - One Page</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">B<span>É</span></div>
+      <div class="brand-text">
+        <div class="company">Birutama Envitech</div>
+        <div class="tagline">Solusi Inovatif Lingkungan & Teknologi</div>
+      </div>
+    </div>
+    <nav class="nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+      <button class="btn btn-primary" id="contactBtn">Contact Us</button>
+      <button class="hamburger" id="hamburger" aria-label="menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-left">
+      <h1>Solusi Inovatif<br><span>Lingkungan & Teknologi</span></h1>
+      <p>Birutama Envitech hadir sebagai konsultan terpercaya untuk mendukung perusahaan menuju masa depan yang lebih berkelanjutan.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-outline" href="#portfolio">Portfolio</a>
+        <button class="btn btn-primary" id="ctaContact">ContactUs</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <!-- inline SVG placeholder -->
+        <img src="assets/hero.svg" alt="team meeting" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients container">
+  <h3 class="section-title">Our Clients</h3>
+  <div class="client-list">
+    <div class="client">Unsplash</div>
+    <div class="client">Notion</div>
+    <div class="client">Intercom</div>
+    <div class="client">descript</div>
+    <div class="client">grammarly</div>
+  </div>
+</section>
+
+<section id="about" class="about container">
+  <div class="about-grid">
+    <div class="about-media"><img src="assets/about.svg" alt="about image" /></div>
+    <div class="about-body">
+      <h3>About Us</h3>
+      <p>Birutama Envitech (BE) adalah perusahaan yang berspesialis di bidang teknik lingkungan, dan IT. Motto kami adalah menjadi konsultan yang inovatif, efektif dan berkelanjutan.</p>
+      <p>Kami berkomitmen memberikan yang terbaik untuk klien, bekerja dalam kemitraan yang efektif untuk hasil luar biasa.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-inner">
+    <div class="stat">
+      <div class="stat-num" data-target="100">0</div>
+      <div class="stat-label">Student</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="20">0</div>
+      <div class="stat-label">Event</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="50">0</div>
+      <div class="stat-label">Training</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="75">0</div>
+      <div class="stat-label">Partner</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services container">
+  <h3 class="section-title">Check Our Services</h3>
+  <div class="services-grid">
+    <div class="service-card" data-service="1">
+      <div class="service-icon">📄</div>
+      <h4>Dokumen Lingkungan</h4>
+      <p>Dokumen lingkungan yang lengkap dan sesuai standar.</p>
+      <button class="btn btn-link open-service" data-service="1">Learn more</button>
+    </div>
+    <div class="service-card" data-service="2">
+      <div class="service-icon">📊</div>
+      <h4>Pelaporan Pengelolaan</h4>
+      <p>Pembuatan laporan pengelolaan lingkungan otomatis.</p>
+      <button class="btn btn-link open-service" data-service="2">Learn more</button>
+    </div>
+    <div class="service-card" data-service="3">
+      <div class="service-icon">⚙️</div>
+      <h4>Tata Lingkungan</h4>
+      <p>Audit dan rencana tata lingkungan profesional.</p>
+      <button class="btn btn-link open-service" data-service="3">Learn more</button>
+    </div>
+    <div class="service-card" data-service="4">
+      <div class="service-icon">🌱</div>
+      <h4>Temporibus</h4>
+      <p>Pelatihan dan program sustainability untuk tim.</p>
+      <button class="btn btn-link open-service" data-service="4">Learn more</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for services -->
+<div class="modal" id="serviceModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent">
+      <h4>Service Title</h4>
+      <p>Detail tentang layanan akan tampil di sini.</p>
+    </div>
+  </div>
+</div>
+
+<section id="portfolio" class="portfolio container">
+  <h3 class="section-title">Portfolio</h3>
+  <div class="portfolio-grid">
+    <!-- 6 placeholder images -->
+    <div class="tile"><img src="assets/portfolio1.svg" alt="portfolio"/></div>
+    <div class="tile"><img src="assets/portfolio2.svg" alt="portfolio"/></div>
+    <div class="tile"><img src="assets/portfolio3.svg" alt="portfolio"/></div>
+    <div class="tile"><img src="assets/portfolio4.svg" alt="portfolio"/></div>
+    <div class="tile"><img src="assets/portfolio5.svg" alt="portfolio"/></div>
+    <div class="tile"><img src="assets/portfolio6.svg" alt="portfolio"/></div>
+  </div>
+</section>
+
+<section class="testimonials container">
+  <h3 class="section-title">People are Saying About We</h3>
+  <div class="slider" id="testimonialSlider">
+    <div class="slide active">
+      <blockquote>"Everything you need to accept payment and grow your money."</blockquote>
+      <div class="author">— Aria Zinarino</div>
+    </div>
+    <div class="slide">
+      <blockquote>"Very helpful app and easy to use."</blockquote>
+      <div class="author">— Jamie</div>
+    </div>
+    <div class="slide">
+      <blockquote>"Supportive team and professional service."</blockquote>
+      <div class="author">— Alex</div>
+    </div>
+    <div class="slider-controls">
+      <button id="prev">‹</button>
+      <button id="next">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact container">
+  <h3 class="section-title">Lets Find Us !</h3>
+  <div class="contact-grid">
+    <div class="contact-map">
+      <!-- static placeholder map -->
+      <img src="assets/map.svg" alt="map"/>
+    </div>
+    <div class="contact-info">
+      <h4>Contact</h4>
+      <p>Manager Marketing: Aji Nugroho</p>
+      <p>Phone: 085292963333</p>
+      <p>Email: info@birutamaenvitech.com</p>
+      <p>Address: Jl Kebagusan Raya No. 50 B,Jakarta</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo small">B<span>É</span></div>
+      <div>Birutama Envitech</div>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="footer-meta">
+      <small>© 2025 Birutama Envitech. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
