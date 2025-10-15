@@ -1,4 +1,13 @@
 // Basic interactivity: mobile nav, services modal, counters, testimonial slider
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 768) {
+    const links = document.querySelectorAll("#mainNav a");
+    links.forEach((a) => (a.style.display = ""));
+    mainNav.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile menu toggle
   const hamburger = document.getElementById("hamburger");
@@ -224,29 +233,29 @@ document.addEventListener("DOMContentLoaded", function () {
       portfolioModal.setAttribute("aria-hidden", "true");
   });
 
-  // Testimonial slider
-  let current = 0;
-  const slides = document.querySelectorAll(".slide");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-  function show(i) {
-    slides.forEach((s) => s.classList.remove("active"));
-    slides[i].classList.add("active");
-  }
-  prev &&
-    prev.addEventListener("click", () => {
-      current = (current - 1 + slides.length) % slides.length;
-      show(current);
-    });
-  next &&
-    next.addEventListener("click", () => {
-      current = (current + 1) % slides.length;
-      show(current);
-    });
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    show(current);
-  }, 5000);
+  // // Testimonial slider
+  // let current = 0;
+  // const slides = document.querySelectorAll(".slide");
+  // const prev = document.getElementById("prev");
+  // const next = document.getElementById("next");
+  // function show(i) {
+  //   slides.forEach((s) => s.classList.remove("active"));
+  //   slides[i].classList.add("active");
+  // }
+  // prev &&
+  //   prev.addEventListener("click", () => {
+  //     current = (current - 1 + slides.length) % slides.length;
+  //     show(current);
+  //   });
+  // next &&
+  //   next.addEventListener("click", () => {
+  //     current = (current + 1) % slides.length;
+  //     show(current);
+  //   });
+  // setInterval(() => {
+  //   current = (current + 1) % slides.length;
+  //   show(current);
+  // }, 5000);
 
   // === HERO IMAGE CAROUSEL WITH DOTS ===
   let heroIndex = 0;
