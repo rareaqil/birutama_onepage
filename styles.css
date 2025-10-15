@@ -494,6 +494,12 @@ body {
 }
 
 /* Portfolio */
+.section-portfolio {
+  height: 100vh; /* membuat 1 layar penuh */
+  background: #fff;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
 .portfolio {
   padding: 64px 0;
 }
