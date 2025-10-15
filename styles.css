@@ -258,6 +258,23 @@ body {
 }
 
 /* About */
+
+.about {
+  height: 100vh; /* seluruh tinggi layar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg);
+}
+
+.about.container {
+  flex: 0 0 60%; /* sekitar 60% tinggi layar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
 .about {
   padding: 48px 0;
 }
@@ -270,7 +287,7 @@ body {
 }
 
 .about-media img {
-  width: 100%;
+  width: 85%;
   border-radius: 8px;
 }
 
@@ -333,6 +350,20 @@ body {
 .stat-label {
   font-size: 14px;
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  #about {
+    height: auto; /* biar scrollable di HP */
+  }
+  .about.container,
+  .stats {
+    flex: unset;
+    padding: 60px 20px;
+  }
+  .stats-inner {
+    flex-direction: column;
+  }
 }
 
 /* Services */
