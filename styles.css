@@ -184,18 +184,50 @@ body {
 .about {
   padding: 48px 0;
 }
+
 .about-grid {
   display: flex;
   gap: 28px;
   align-items: center;
+  flex-wrap: wrap;
 }
+
 .about-media img {
   width: 100%;
   border-radius: 8px;
 }
+
+.about-body {
+  flex: 1;
+}
+
 .about-body h3 {
   color: var(--primary);
-  font-size: 22px;
+  font-size: 26px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+/* Subtitle above title */
+.section-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-subtitle .line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.section-subtitle .text {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* Stats */
