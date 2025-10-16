@@ -11,22 +11,14 @@
 .section-hero,
 .section-about,
 .section-services,
-.section-portfolio {
-  height: 100%;
+.section-portfolio,
+.section-contact {
+  min-height: 100vh; /* section minimal full screen */
   width: 100%;
-  /* padding: 60px 0; */
-  /* scroll-margin-top: 80px; */
-}
-@media (max-width: 1536px) {
-  .section-hero,
-  .section-about,
-  .section-services,
-  .section-portfolio {
-    min-height: 100vh; /* lebih kecil supaya muat layar tablet */
-  }
+  box-sizing: border-box; /* supaya padding tidak menambah total height */
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .section-hero,
   .section-about,
   .section-services,
@@ -36,7 +28,7 @@
 }
 
 /* Mobile / small screen */
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
   .section-hero,
   .section-about,
   .section-services,
@@ -59,7 +51,7 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .container {
     padding-right: 20px !important;
     padding-left: 20px !important;
@@ -102,7 +94,7 @@ body {
   object-position: center;
   transform: scale(1.5);
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .logo img {
     height: 26px;
   }
@@ -157,7 +149,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .hamburger {
     display: block;
   }
@@ -191,7 +183,7 @@ body {
 /* Nav Responsive */
 
 /* Hero */
-.hero-section {
+.section-hero {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -261,7 +253,7 @@ body {
   /* text-align: start; */
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   /* tablet */
   .section-title {
     font-size: 20px;
@@ -551,7 +543,7 @@ body {
 .portfolio {
   padding: 64px 0;
 }
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
   .portfolio.flip-x {
     transform: none; /* hapus efek rotasi */
     transition: none; /* optional: hapus transisi */
@@ -701,8 +693,19 @@ body {
   cursor: pointer;
 }
 
+.section-contact {
+  background: linear-gradient(90deg, #054e54, #0b6b6b) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* membuat 1 layar penuh */
+  background: #ffffff;
+  overflow: hidden;
+}
 .contact {
-  scroll-margin-top: 80px;
+  /* scroll-margin-top: 80px; */
+  /* padding: 48px 0; */
+  margin-top: 3%;
 }
 .contact.section-title {
   color: var(--accent);
@@ -933,7 +936,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .hero-inner {
     flex-direction: column;
   }
@@ -957,7 +960,7 @@ body {
     padding: 8px 10px;
   }
 }
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
