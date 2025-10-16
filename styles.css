@@ -13,8 +13,10 @@
 .section-services,
 .section-portfolio,
 .section-contact {
-  min-height: 100vh; /* section minimal full screen */
+  /* max-height: 100vh; section minimal full screen */
+  min-height: 95vh; /* biarkan sesuai konten */
   width: 100%;
+  scroll-margin-top: 5vh;
   box-sizing: border-box; /* supaya padding tidak menambah total height */
 }
 
@@ -973,7 +975,7 @@ body {
 }
 
 .hero {
-  padding-top: 100px;
+  padding-top: 1.5%;
   background: #ffffff;
 }
 
