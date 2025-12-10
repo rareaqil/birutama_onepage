@@ -1,4 +1,9 @@
 // Basic interactivity: mobile nav, services modal, counters, testimonial slider
+document.addEventListener("DOMContentLoaded", () => {
+  if (!location.hash) {
+    location.hash = "#home"; // otomatis pindah ke #home
+  }
+});
 window.addEventListener("resize", function () {
   if (window.innerWidth > 768) {
     const links = document.querySelectorAll("#mainNav a");
@@ -60,13 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
       </p>
       <ul>
         <li>AMDAL (Analisis Mengenai Dampak Lingkungan)</li>
+        <li>DELH (Dokumen Evaluasi Lingkungan Hidup)</li>
         <li>UKL–UPL (Upaya Pengelolaan & Pemantauan Lingkungan)</li>
+        <li>RKL-RPL Rinci (Rencana Pengelolaan dan Rencana Pemantauan Lingkungan Hidup Rinci)</li>
         <li>SPPL (Surat Pernyataan Pengelolaan Lingkungan)</li>
       </ul>
       <p>
-        Semua proses dilakukan sesuai regulasi terbaru dari Kementerian
-        Lingkungan Hidup dan Kehutanan (KLHK). Kami memastikan setiap dokumen
-        memenuhi standar teknis dan hukum, serta mendukung keberlanjutan proyek Anda.
+        Semua proses dilakukan sesuai regulasi terbaru dari Kementerian Lingkungan Hidup (KLH). Kami memastikan setiap dokumen memenuhi standar teknis dan hukum, serta mendukung keberlanjutan proyek Anda.
       </p>
     `,
     },
@@ -79,13 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </p>
       <ul>
         <li>Laporan RKL-RPL (Rencana Pengelolaan & Pemantauan Lingkungan)</li>
-        <li>Laporan PROPER</li>
-        <li>Laporan triwulan dan tahunan</li>
+        <li>Laporan Monitoring triwulan dan setiap semester</li>
       </ul>
       <p>
-        Sistem kami dapat diintegrasikan dengan platform digital untuk
-        mempercepat proses pelaporan, meningkatkan akurasi data, dan memastikan
-        kepatuhan terhadap regulasi.
+        Laporan Monitoring triwulan dan setiap semester
+Kami berpengalaman dengan platform digital untuk dalam proses pelaporan, akurasi data, dan kepatuhan terhadap regulasi.
       </p>
     `,
     },
@@ -188,14 +191,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Data project
   const portfolioDetails = {
     1: {
-      title: "Dokumen AMDAL",
-      image: "assets/portfolio1.svg",
-      desc: "Penyusunan dokumen AMDAL lengkap untuk proyek industri dan infrastruktur, sesuai regulasi terbaru.",
+      title: "Service - Dokumen Lingkungan",
+      image: "assets/photos/header_2.png",
+      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
     },
     2: {
-      title: "Pengelolaan Limbah",
-      image: "assets/portfolio2.svg",
-      desc: "Desain sistem pengelolaan limbah cair dan padat, untuk efisiensi serta kepatuhan lingkungan.",
+      title: "Service - Dokumen Lingkungan",
+      image: "assets/photos/porto_2.jpg",
+      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
     },
     3: {
       title: "Pelaporan Digital",
@@ -284,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(() => {
     const nextIndex = (heroIndex + 1) % heroSlides.length;
     showHeroSlide(nextIndex);
-  }, 4000);
+  }, 6000);
 
   // klik manual (opsional)
   heroDots.forEach((dot, i) => {

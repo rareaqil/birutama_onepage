@@ -315,14 +315,19 @@ body {
 
 .about-grid {
   display: flex;
-  gap: 28px;
+  gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.about-media {
+  flex: 1;
 }
 
 .about-media img {
   width: 80%;
   border-radius: 8px;
+  /* max-width: 50%; */
 }
 
 .about-body {
@@ -381,6 +386,10 @@ body {
 .stat-num {
   font-size: 38px;
   font-weight: 800;
+}
+.stat-num::after {
+  content: "+";
+  margin-left: 10px;
 }
 .stat-label {
   font-size: 14px;
@@ -649,6 +658,9 @@ body {
 }
 .portfolio-content {
   margin-top: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 .portfolio-content img {
   width: 100%;
