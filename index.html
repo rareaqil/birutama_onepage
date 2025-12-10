@@ -310,7 +310,38 @@
     <div class="portfolio-modal" id="portfolioModal" aria-hidden="true">
       <div class="portfolio-dialog">
         <button class="portfolio-close" id="portfolioClose">✕</button>
-        <div class="portfolio-content" id="portfolioContent"></div>
+        <div class="portfolio-content" id="portfolioContent">
+          <div class="portfolio-image-container">
+            <button class="portfolio-nav prev" id="prevBtn">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M15 18l-6-6 6-6"
+                  stroke="#fff"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <img id="mainImage" src="" alt="" />
+            <button class="portfolio-nav next" id="nextBtn">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M9 6l6 6-6 6"
+                  stroke="#fff"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="portfolio-thumbnails" id="portfolioThumbnails"></div>
+          <h4 id="modalTitle"></h4>
+          <p id="modalDesc"></p>
+        </div>
       </div>
     </div>
 

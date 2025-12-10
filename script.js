@@ -183,57 +183,164 @@ Kami berpengalaman dengan platform digital untuk dalam proses pelaporan, akurasi
     observer.observe(statsSection);
   }
 
-  // Modal Portofolio
+  // // Modal Portofolio
+  // const portfolioModal = document.getElementById("portfolioModal");
+  // const portfolioContent = document.getElementById("portfolioContent");
+  // const closePortfolio = document.getElementById("portfolioClose");
+
+  // // Data project
+  // const portfolioDetails = {
+  //   1: {
+  //     title: "Service - Dokumen Lingkungan",
+  //     image: "assets/photos/header_2.png",
+  //     desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
+  //   },
+  //   2: {
+  //     title: "Service - Dokumen Lingkungan",
+  //     image: "assets/photos/porto_2.jpg",
+  //     desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
+  //   },
+  //   3: {
+  //     title: "Pelaporan Digital",
+  //     image: "assets/portfolio3.svg",
+  //     desc: "Platform otomatisasi pelaporan PROPER dan RKL-RPL dengan integrasi sistem internal.",
+  //   },
+  //   4: {
+  //     title: "Pemantauan Air",
+  //     image: "assets/portfolio4.svg",
+  //     desc: "Proyek IoT pemantauan kualitas air dengan sensor dan dashboard visualisasi.",
+  //   },
+  //   5: {
+  //     title: "Audit Lingkungan",
+  //     image: "assets/portfolio5.svg",
+  //     desc: "Pelaksanaan audit kepatuhan dan sertifikasi ISO 14001 bagi sektor energi.",
+  //   },
+  //   6: {
+  //     title: "Konsultasi ESG",
+  //     image: "assets/portfolio6.svg",
+  //     desc: "Pendampingan implementasi ESG dan penyusunan laporan keberlanjutan (sustainability report).",
+  //   },
+  // };
+
+  // // Event untuk tiap tile
+  // document.querySelectorAll(".tile").forEach((tile) => {
+  //   tile.addEventListener("click", () => {
+  //     const id = tile.getAttribute("data-portfolio");
+  //     const item = portfolioDetails[id];
+  //     portfolioContent.innerHTML = `
+  //     <img src="${item.image}" alt="${item.title}">
+  //     <h4>${item.title}</h4>
+  //     <p>${item.desc}</p>
+  //   `;
+  //     portfolioModal.setAttribute("aria-hidden", "false");
+  //   });
+  // });
+
+  // // Close modal
+  // closePortfolio.addEventListener("click", () =>
+  //   portfolioModal.setAttribute("aria-hidden", "true"),
+  // );
+  // portfolioModal.addEventListener("click", (e) => {
+  //   if (e.target === portfolioModal)
+  //     portfolioModal.setAttribute("aria-hidden", "true");
+  // });
+
   const portfolioModal = document.getElementById("portfolioModal");
-  const portfolioContent = document.getElementById("portfolioContent");
+  const mainImage = document.getElementById("mainImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const thumbnailsContainer = document.getElementById("portfolioThumbnails");
   const closePortfolio = document.getElementById("portfolioClose");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentImages = [];
+  let currentIndex = 0;
 
   // Data project
   const portfolioDetails = {
     1: {
       title: "Service - Dokumen Lingkungan",
-      image: "assets/photos/header_2.png",
-      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
+      images: [
+        "assets/photos/header_2.png",
+        "assets/photos/porto_1-2.jpg",
+        "assets/photos/porto_1-3.jpg",
+      ],
+      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
     },
     2: {
       title: "Service - Dokumen Lingkungan",
-      image: "assets/photos/porto_2.jpg",
-      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
+      images: [
+        "assets/photos/porto_2.jpg",
+        "assets/photos/porto_2-2.jpg",
+        "assets/photos/porto_2-3.jpg",
+        "assets/photos/porto_2-4.jpg",
+      ],
+      desc: "Kegiatan Workshop Penyusunan dokumen lingkungan untuk proyek industri pertambangan, kehutanan, manufaktur, migas, dan sebagainya.",
     },
-    3: {
-      title: "Pelaporan Digital",
-      image: "assets/portfolio3.svg",
-      desc: "Platform otomatisasi pelaporan PROPER dan RKL-RPL dengan integrasi sistem internal.",
-    },
-    4: {
-      title: "Pemantauan Air",
-      image: "assets/portfolio4.svg",
-      desc: "Proyek IoT pemantauan kualitas air dengan sensor dan dashboard visualisasi.",
-    },
-    5: {
-      title: "Audit Lingkungan",
-      image: "assets/portfolio5.svg",
-      desc: "Pelaksanaan audit kepatuhan dan sertifikasi ISO 14001 bagi sektor energi.",
-    },
-    6: {
-      title: "Konsultasi ESG",
-      image: "assets/portfolio6.svg",
-      desc: "Pendampingan implementasi ESG dan penyusunan laporan keberlanjutan (sustainability report).",
-    },
+    // 3: {
+    //   title: "Pemantauan Air",
+    //   images: ["assets/portfolio4.svg", "assets/portfolio_extra_3.jpg"],
+    //   desc: "Proyek IoT pemantauan kualitas air dengan sensor dan dashboard visualisasi.",
+    // },
+    // 4: {
+    //   title: "Audit Lingkungan",
+    //   images: ["assets/portfolio5.svg", "assets/portfolio_extra_4.jpg"],
+    //   desc: "Pelaksanaan audit kepatuhan dan sertifikasi ISO 14001 bagi sektor energi.",
+    // },
+    // 5: {
+    //   title: "Konsultasi ESG",
+    //   images: ["assets/portfolio6.svg", "assets/portfolio_extra_5.jpg"],
+    //   desc: "Pendampingan implementasi ESG dan penyusunan laporan keberlanjutan (sustainability report).",
+    // },
   };
 
-  // Event untuk tiap tile
+  // Event tiap tile
   document.querySelectorAll(".tile").forEach((tile) => {
     tile.addEventListener("click", () => {
       const id = tile.getAttribute("data-portfolio");
       const item = portfolioDetails[id];
-      portfolioContent.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
-      <h4>${item.title}</h4>
-      <p>${item.desc}</p>
-    `;
+
+      modalTitle.textContent = item.title;
+      modalDesc.textContent = item.desc;
+      currentImages = item.images;
+      currentIndex = 0;
+      mainImage.src = currentImages[currentIndex];
+
+      // Buat thumbnail
+      thumbnailsContainer.innerHTML = "";
+      currentImages.forEach((img, index) => {
+        const thumb = document.createElement("img");
+        thumb.src = img;
+        if (index === 0) thumb.classList.add("active");
+        thumb.addEventListener("click", () => {
+          currentIndex = index;
+          updateMainImage();
+        });
+        thumbnailsContainer.appendChild(thumb);
+      });
+
       portfolioModal.setAttribute("aria-hidden", "false");
     });
+  });
+
+  // Fungsi update main image & active thumbnail
+  function updateMainImage() {
+    mainImage.src = currentImages[currentIndex];
+    thumbnailsContainer.querySelectorAll("img").forEach((t, i) => {
+      t.classList.toggle("active", i === currentIndex);
+    });
+  }
+
+  // Tombol prev/next
+  prevBtn.addEventListener("click", () => {
+    currentIndex =
+      (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateMainImage();
+  });
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateMainImage();
   });
 
   // Close modal
@@ -243,6 +350,19 @@ Kami berpengalaman dengan platform digital untuk dalam proses pelaporan, akurasi
   portfolioModal.addEventListener("click", (e) => {
     if (e.target === portfolioModal)
       portfolioModal.setAttribute("aria-hidden", "true");
+  });
+
+  // Optional: zoom in/out main image
+  let zoomed = false;
+  mainImage.addEventListener("click", () => {
+    if (!zoomed) {
+      mainImage.style.maxHeight = "80vh";
+      mainImage.style.cursor = "zoom-out";
+    } else {
+      mainImage.style.maxHeight = "400px";
+      mainImage.style.cursor = "zoom-in";
+    }
+    zoomed = !zoomed;
   });
 
   // // Testimonial slider
